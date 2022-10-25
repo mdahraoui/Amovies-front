@@ -1,4 +1,4 @@
-package com.example.mymovie;
+package com.aston_cdnt17.amovies;
 
 import org.junit.Test;
 

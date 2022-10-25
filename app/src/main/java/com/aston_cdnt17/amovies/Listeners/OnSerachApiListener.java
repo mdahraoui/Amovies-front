@@ -1,6 +1,6 @@
-package com.example.mymovie.Listeners;
+package com.aston_cdnt17.amovies.Listeners;
 
-import com.example.mymovie.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.models.SearchApiResponse;
 
 public interface OnSerachApiListener {
 

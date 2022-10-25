@@ -1,10 +1,11 @@
-package com.example.mymovie;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.aston_cdnt17.amovies;
 
 import android.os.Bundle;
 
-import com.example.mymovie.databinding.ActivityMovieBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.amovies.R;
+import com.example.amovies.databinding.ActivityMovieBinding;
 
 public class MovieActivity extends AppCompatActivity {
 

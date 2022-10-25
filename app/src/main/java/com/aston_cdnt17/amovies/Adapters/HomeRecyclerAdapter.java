@@ -1,4 +1,4 @@
-package com.example.mymovie.Adapters;
+package com.aston_cdnt17.amovies.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mymovie.Listeners.OnMovieClickListener;
-import com.example.mymovie.R;
-import com.example.mymovie.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.Listeners.OnMovieClickListener;
+import com.aston_cdnt17.amovies.models.SearchApiResponse;
+import com.example.amovies.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

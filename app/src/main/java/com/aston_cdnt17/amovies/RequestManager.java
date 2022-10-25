@@ -1,10 +1,10 @@
-package com.example.mymovie;
+package com.aston_cdnt17.amovies;
 
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.mymovie.Listeners.OnSerachApiListener;
-import com.example.mymovie.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.Listeners.OnSerachApiListener;
+import com.aston_cdnt17.amovies.models.SearchApiResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;

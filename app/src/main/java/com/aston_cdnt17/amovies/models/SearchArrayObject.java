@@ -1,4 +1,4 @@
-package com.example.mymovie.models;
+package com.aston_cdnt17.amovies.models;
 
 import java.util.List;
 

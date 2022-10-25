@@ -1,18 +1,19 @@
-package com.example.mymovie;
+package com.aston_cdnt17.amovies;
+
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
-import android.os.Bundle;
-import android.widget.Toast;
-
-import com.example.mymovie.Adapters.HomeRecyclerAdapter;
-import com.example.mymovie.Listeners.OnMovieClickListener;
-import com.example.mymovie.Listeners.OnSerachApiListener;
-import com.example.mymovie.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.Adapters.HomeRecyclerAdapter;
+import com.aston_cdnt17.amovies.Listeners.OnMovieClickListener;
+import com.aston_cdnt17.amovies.Listeners.OnSerachApiListener;
+import com.aston_cdnt17.amovies.models.SearchApiResponse;
+import com.example.amovies.R;
 
 public class MainActivity extends AppCompatActivity implements OnMovieClickListener {
 

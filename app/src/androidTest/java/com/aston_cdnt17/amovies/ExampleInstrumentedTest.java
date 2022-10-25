@@ -1,4 +1,4 @@
-package com.example.mymovie;
+package com.aston_cdnt17.amovies;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.mymovie", appContext.getPackageName());
+        assertEquals("com.example.com.aston.cdnt17.amovies", appContext.getPackageName());
     }
 }
