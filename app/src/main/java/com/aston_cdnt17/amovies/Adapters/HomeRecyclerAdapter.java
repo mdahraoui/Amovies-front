@@ -1,6 +1,7 @@
 package com.aston_cdnt17.amovies.Adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aston_cdnt17.amovies.Listeners.OnMovieClickListener;
-import com.aston_cdnt17.amovies.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.models.MovieBean;
 import com.example.amovies.R;
 import com.squareup.picasso.Picasso;
 
@@ -20,10 +21,10 @@ import java.util.List;
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeViewHolder> {
 Context context;
-List<SearchApiResponse> list;
+List<MovieBean> list;
 OnMovieClickListener listener;
 
-    public HomeRecyclerAdapter(Context context, List<SearchApiResponse> list, OnMovieClickListener listener) {
+    public HomeRecyclerAdapter(Context context, List<MovieBean> list, OnMovieClickListener listener) {
         this.context = context;
         this.list = list;
         this.listener = listener;
@@ -37,8 +38,8 @@ OnMovieClickListener listener;
 
     @Override
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
-        holder.textView_movie.setText((CharSequence) list.get(position).getTitle());
-        Picasso.get().load(list.get(position).getImage()).into(holder.imageView_poster);
+        holder.textView_movie.setText((CharSequence) list.get(position).getNom());
+        Picasso.get().load(Uri.parse("https://image.tmdb.org/t/p/w200/"+list.get(position).getPosterPath())).into(holder.imageView_poster);
 
     }
 

@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aston_cdnt17.amovies.Adapters.HomeRecyclerAdapter;
 import com.aston_cdnt17.amovies.Listeners.OnMovieClickListener;
 import com.aston_cdnt17.amovies.Listeners.OnSerachApiListener;
-import com.aston_cdnt17.amovies.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.models.MovieBean;
 import com.example.amovies.R;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OnMovieClickListener {
 
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieClickListe
 
     private final OnSerachApiListener listener = new OnSerachApiListener() {
         @Override
-        public void onResponse(SearchApiResponse response) {
+        public void onResponse(ArrayList<MovieBean> response) {
             dialog.dismiss();
             if (response==null){
                 Toast.makeText(MainActivity.this, "No data available", Toast.LENGTH_LONG).show();
@@ -74,10 +76,10 @@ public class MainActivity extends AppCompatActivity implements OnMovieClickListe
     };
 
 
-    private void showResult(SearchApiResponse response) {
+    private void showResult(ArrayList<MovieBean> response) {
         recycler_view_home.setHasFixedSize(true);
         recycler_view_home.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
-        adapter = new HomeRecyclerAdapter(this, response.getTitle(), this);
+        adapter = new HomeRecyclerAdapter(this, response, this);
         recycler_view_home.setAdapter(adapter);
     }
 

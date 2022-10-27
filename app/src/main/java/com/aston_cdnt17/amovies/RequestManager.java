@@ -4,7 +4,9 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.aston_cdnt17.amovies.Listeners.OnSerachApiListener;
-import com.aston_cdnt17.amovies.models.SearchApiResponse;
+import com.aston_cdnt17.amovies.models.MovieBean;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,7 +21,7 @@ public class RequestManager {
 
      Context context;
      Retrofit reftrofit = new Retrofit.Builder()
-             .baseUrl("https://dbm.p.rapidapi.com")
+             .baseUrl("https://192.168.1.254:7125/Movies")
              .addConverterFactory(GsonConverterFactory.create())
              .build();
 
@@ -29,11 +31,11 @@ public class RequestManager {
 
      public void searchMovies(OnSerachApiListener listener, String movie_name) {
           getMovies getMovies = reftrofit.create(RequestManager.getMovies.class);
-          Call<SearchApiResponse> call = getMovies.callMovies(movie_name);
+          Call<ArrayList<MovieBean>> call = getMovies.callMovies(movie_name);
 
-          call.enqueue(new Callback<SearchApiResponse>() {
+          call.enqueue(new Callback<ArrayList<MovieBean>>() {
                @Override
-               public void onResponse(Call<SearchApiResponse> call, Response<SearchApiResponse> response) {
+               public void onResponse(Call<ArrayList<MovieBean>> call, Response<ArrayList<MovieBean>> response) {
                     if (!response.isSuccessful()) {
                          Toast.makeText(context, "Couldn't fetch Data!", Toast.LENGTH_LONG );
                          return;
@@ -42,7 +44,7 @@ public class RequestManager {
                }
 
                @Override
-               public void onFailure(Call<SearchApiResponse> call, Throwable t) {
+               public void onFailure(Call<ArrayList<MovieBean>> call, Throwable t) {
                     listener.onError(t.getMessage());
 
                }
@@ -52,12 +54,10 @@ public class RequestManager {
 
      public interface getMovies {
           @Headers({
-                  "Accept: application/json",
-                  "x-rapidapi-host: dbm.p.rapidapi.com",
-                  "x-rapidapi-host: 182388e94fmsh44160494f4598f0p1d81b5jsnff34339873c9",
+                  "Accept: application/json"
           })
-          @GET("listings")
-          Call<SearchApiResponse> callMovies(
+          @GET()
+          Call<ArrayList<MovieBean>> callMovies(
                   @Path("movie_name") String movie_name
           );
      }
