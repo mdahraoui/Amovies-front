@@ -4,99 +4,99 @@ import java.util.List;
 
 public class MovieBean {
 
-    public int IdMovies;
-    public String Nom ;
-    public String Description ;
-    public boolean Adulte ;
-    public String PosterPath ;
-    public float Note ;
-    public int Popularite ;
+    public int idMovies;
+    public String nom ;
+    public String description ;
+    public boolean adulte ;
+    public String posterPath ;
+    public float note ;
+    public int popularite ;
 
-    public String Director ;
-    public List<String> Genres ;
+    public String director ;
+    public String[] genres ;
 
-    public  List<String> Actors;
+    public  String[] actors;
 
     public MovieBean() {
     }
 
     public int getIdMovies() {
-        return IdMovies;
+        return idMovies;
     }
 
     public void setIdMovies(int idMovies) {
-        IdMovies = idMovies;
+        idMovies = idMovies;
     }
 
     public String getNom() {
-        return Nom;
+        return nom;
     }
 
     public void setNom(String nom) {
-        Nom = nom;
+        nom = nom;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        description = description;
     }
 
     public boolean isAdulte() {
-        return Adulte;
+        return adulte;
     }
 
     public void setAdulte(boolean adulte) {
-        Adulte = adulte;
+        adulte = adulte;
     }
 
     public String getPosterPath() {
-        return PosterPath;
+        return posterPath;
     }
 
     public void setPosterPath(String posterPath) {
-        PosterPath = posterPath;
+        posterPath = posterPath;
     }
 
     public float getNote() {
-        return Note;
+        return note;
     }
 
     public void setNote(float note) {
-        Note = note;
+        note = note;
     }
 
     public int getPopularite() {
-        return Popularite;
+        return popularite;
     }
 
     public void setPopularite(int popularite) {
-        Popularite = popularite;
+        popularite = popularite;
     }
 
     public String getDirector() {
-        return Director;
+        return director;
     }
 
     public void setDirector(String director) {
-        Director = director;
+        director = director;
     }
 
-    public List<String> getGenres() {
-        return Genres;
+    public String[] getGenres() {
+        return genres;
     }
 
-    public void setGenres(List<String> genres) {
-        Genres = genres;
+    public void setGenres(String[] genres) {
+        genres = genres;
     }
 
-    public List<String> getActors() {
-        return Actors;
+    public String[] getActors() {
+        return actors;
     }
 
-    public void setActors(List<String> actors) {
-        Actors = actors;
+    public void setActors(String[] actors) {
+        actors = actors;
     }
 }
