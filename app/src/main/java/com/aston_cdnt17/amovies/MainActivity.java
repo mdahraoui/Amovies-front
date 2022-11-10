@@ -1,6 +1,8 @@
 package com.aston_cdnt17.amovies;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -11,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aston_cdnt17.amovies.Adapters.HomeRecyclerAdapter;
 import com.aston_cdnt17.amovies.models.MovieBean;
 import com.example.amovies.databinding.ActivityMainBinding;
+import com.google.gson.Gson;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,12 +52,25 @@ public class MainActivity extends AppCompatActivity {
         recycler_view_home.setLayoutManager(new GridLayoutManager(this, 2));
 
 
+        adapter.set_parentViewModel(model);
+
 
         model.movies.observe(this, movies ->{
             if(movies != null){
                 adapter.submitList(new ArrayList<MovieBean>(movies));
             }
         });
+
+
+        model.movieClicked.observe(this,m->{
+            if(m!=null){
+                Intent movieIntent = new Intent(this, MovieActivity.class);
+                String mToString = new Gson().toJson(m);
+                movieIntent.putExtra("movie", mToString);
+                startActivity(movieIntent);
+            }
+        });
+
 
         //dialog = new ProgressDialog(this);
 

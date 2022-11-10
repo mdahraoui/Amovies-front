@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Amovies</string>
+    <string name="séances">Trouver les séances autour de moi</string>
 </resources>

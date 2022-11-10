@@ -1,5 +1,7 @@
 package com.aston_cdnt17.amovies.Listeners;
 
-public interface OnMovieClickListener {
+import androidx.recyclerview.widget.RecyclerView;
+
+public interface OnMovieClickListener extends RecyclerView.OnItemTouchListener {
     void onMovieClicked(String id);
 }

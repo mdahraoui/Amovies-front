@@ -11,6 +11,15 @@ import java.util.ArrayList;
 public class MainViewModel extends ViewModel {
 
     MutableLiveData<ArrayList<MovieBean>> movies = new MutableLiveData<>();
+    MutableLiveData<String> text = new MutableLiveData<>();
+    MutableLiveData<MovieBean> movieClicked = new MutableLiveData<>();
+
+
+    public MutableLiveData<String> getText() {
+        return text;
+    }
+
+
 
     public MutableLiveData<ArrayList<MovieBean>> getMovies() {
         return movies;
@@ -28,4 +37,12 @@ public class MainViewModel extends ViewModel {
             }
         }).start();
     }
+
+    public void clickMovie(MovieBean movie){
+        movieClicked.postValue(null);
+        new Thread(()->{
+            movieClicked.postValue(movie);
+        }).start();
+    }
+
 }
