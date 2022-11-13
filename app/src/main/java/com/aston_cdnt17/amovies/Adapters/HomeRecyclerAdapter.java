@@ -32,6 +32,7 @@ public class HomeRecyclerAdapter extends ListAdapter<MovieBean, HomeRecyclerAdap
         return _parentViewModel;
     }
 
+
     public void set_parentViewModel(MainViewModel _parentViewModel) {
         this._parentViewModel = _parentViewModel;
     }

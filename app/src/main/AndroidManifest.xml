@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.amovies">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
 
     <application
         android:allowBackup="true"
@@ -16,6 +21,9 @@
         android:theme="@style/Theme.MyMovie"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name="com.aston_cdnt17.amovies.SeanceActivity"
+            android:exported="false" />
         <activity
             android:name="com.aston_cdnt17.amovies.MovieActivity"
             android:exported="false" />

@@ -38,6 +38,11 @@ public class MovieActivity extends AppCompatActivity {
             }
         }
 
+        binding.btn.setOnClickListener(l->{
+            Intent seanceIntent = new Intent(this, SeanceActivity.class);
+            seanceIntent.putExtra("title", binding.tvTitre.getText());
+            startActivity(seanceIntent);
+        });
 
     }
 }
