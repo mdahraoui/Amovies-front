@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.aston_cdnt17.amovies.models.MovieBean;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainViewModel extends ViewModel {

@@ -1,15 +1,17 @@
 package com.aston_cdnt17.amovies;
 import com.aston_cdnt17.amovies.models.MovieBean;
-import com.aston_cdnt17.amovies.models.SeanceBean;
 import com.aston_cdnt17.amovies.models.Showtime;
 import com.aston_cdnt17.amovies.models.ShowtimesBean;
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class RequestManager {
@@ -60,6 +62,38 @@ public class RequestManager {
 
           return null;
      }
+
+     public static String sendPost(String url, String email, String pwd, String jsonAEnvoyer ) throws Exception {
+
+          OkHttpClient client = new OkHttpClient();
+          //Corps de la requête
+          MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+          if(!email.isEmpty() && !pwd.isEmpty()){
+               url = url+"?email="+email+"&password="+pwd;
+          }
+          if(!jsonAEnvoyer.isEmpty()){
+               RequestBody body = RequestBody.create(jsonAEnvoyer, JSON);
+          }
+
+          System.out.println("url : " + url);
+          //Création de la requête
+          Request request = new Request.Builder().url(url).post(RequestBody.create("",JSON)).build();
+          //Le try-with ressource doc ici
+          //Nous permet de fermer la réponse en cas de succès ou d'échec (dans le finally)
+          try (Response response = client.newCall(request).execute()) {
+               if (!response.isSuccessful()) {
+                    throw new IOException("Unexpected code " + response);
+               }
+               return response.body().string();
+          }
+     }
+
+     public static boolean Login(String email, String password) throws Exception {
+          String result = sendPost("https://astonamovies.azurewebsites.net/Auth", email, password, "");
+          boolean isAuth = new Gson().fromJson(result, boolean.class);
+          return isAuth;
+     }
+
 
 
 }

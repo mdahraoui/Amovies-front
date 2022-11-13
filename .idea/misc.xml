@@ -3,15 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/activity_main.xml" value="0.20742753623188406" />
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/activity_movie.xml" value="0.1" />
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/activity_seance.xml" value="0.371875" />
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/home_movies_list.xml" value="0.20742753623188406" />
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/row_resultat_seances.xml" value="0.20742753623188406" />
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/row_seances_time.xml" value="0.20742753623188406" />
-        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/row_showing_seance.xml" value="0.20969202898550723" />
+        <entry key="..\:/Users/dmose/Bureau/Amovies-front/app/src/main/res/layout/activity_movie.xml" value="0.1381340579710145" />
+        <entry key="..\:/Users/spiro/AndroidStudioProjects/Mymovie/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/spiro/AndroidStudioProjects/Mymovie/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/spiro/AndroidStudioProjects/Mymovie/app/src/main/res/layout/activity_movie.xml" value="0.1" />
+        <entry key="..\:/Users/spiro/AndroidStudioProjects/Mymovie/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/spiro/AndroidStudioProjects/Mymovie/app/src/main/res/layout/home_movies_list.xml" value="0.1" />
       </map>
     </option>
