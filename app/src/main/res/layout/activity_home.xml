@@ -10,15 +10,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1B000000"
+        android:background="#000000"
         android:orientation="vertical"
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/logo"
+            android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="377dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_height="280dp"
+            app:srcCompat="@drawable/red_and_black_modern_super_star_entrainment_logo_" />
 
         <EditText
             android:id="@+id/et_login"
@@ -53,13 +53,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
+            android:background="#FFC107"
             android:text="Connexion" />
 
         <TextView
             android:id="@+id/tv_ins"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="créer un compte" />
+            android:text="créer un compte"
+            android:textColor="#673AB7" />
 
     </LinearLayout>
 
